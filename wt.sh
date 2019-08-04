@@ -1,15 +1,15 @@
 #!/bin/bash
 
 END=10;
-
-for i in $(seq 4 $END)
+#  iterate from 1 to 10<END>
+for i in $(seq 1 $END)
 do 
 	echo $i
-	branch = "wtb-$i";
-	git checkout -b $branch
+	branch = "wtb-$i"
+	git co -b $branch
 	echo -e $branch > notes.txt
 	git acm 'add notes txt'
-	git checkout master
-	git worktree add "../ww2018/$branch" $branch
+	git co master
+	git worktree add "../wt2019/$branch" $branch
 done
 
